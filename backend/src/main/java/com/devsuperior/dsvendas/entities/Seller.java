@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_sellers")
 public class Seller {
-	
+	//Tabela de vendedores
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
