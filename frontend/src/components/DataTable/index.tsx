@@ -1,4 +1,16 @@
+import { useState } from "react";
+import { SalePage } from "types/sale";
+
 const DataTable = () => {
+
+    const [page, setPage] = useState<SalePage>({
+        first: true,
+        last: true,
+        number: 0,
+        totalElements: 0,
+        totalPages: 0
+    });
+ 
     return (
         <div className="table-responsive">
             <table className="table table-striped table-sm">
