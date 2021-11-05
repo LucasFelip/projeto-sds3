@@ -11,7 +11,7 @@ type SeriesData = {
 }
 
 type ChartData = {
-    labels:{
+    labels: {
         categories: string[];
     };
     series: SeriesData[];
@@ -20,12 +20,12 @@ type ChartData = {
 const BarChart = () => {
 
     const [chartData, setChartData] = useState<ChartData>({
-        labels:{
-            categories:[]
+        labels: {
+            categories: []
         },
         series: [
             {
-                name:"",
+                name: "",
                 data: []
             }
         ]
@@ -39,12 +39,12 @@ const BarChart = () => {
                 const mySeries = data.map(x => round(100.0 * x.deals / x.visited, 2));
 
                 setChartData({
-                    labels:{
+                    labels: {
                         categories: myLabels
                     },
                     series: [
                         {
-                            name:"% Success",
+                            name: "% Success",
                             data: mySeries
                         }
                     ]
@@ -61,11 +61,11 @@ const BarChart = () => {
     };
 
     return (
-        <Chart 
-            options = {{...options, xaxis: chartData.labels}} 
-            series = {chartData.series}
-            type = "bar"
-            height = "240"
+        <Chart
+            options={{ ...options, xaxis: chartData.labels }}
+            series={chartData.series}
+            type="bar"
+            height="240"
         />
     );
 }
